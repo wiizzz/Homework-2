@@ -37,7 +37,7 @@ Investigate the minting function in the UniswapV2Pair contract. When depositing 
 
 > When depositing tokens into a Uniswap V2 Pair for not the first time, the amount of liquidity (LP tokens) minted for the depositor is determined by the following formula: 
 >
-> $$ liquidity = min\{\frac{amount0}{reserve0}, \frac{amount1}{reserve1}\} * totalSupply $$
+> $$liquidity = min\{\frac{amount0}{reserve0}, \frac{amount1}{reserve1}\} * totalSupply$$
 > The intention behind this formula is to ensure that the new liquidity is added to the pool at the current price ratio between the two assets. It prevents dilution or unfair advantage by ensuring that new liquidity providers can only obtain LP tokens proportional to the amount of liquidity they're adding to the pool relative to the pool's existing size. This ensures that the share of the pool a liquidity provider receives is fair, equitable, and corresponds to the value they add.
 > 
 > This formula maintains the relative value of all LP tokens by adding new liquidity at the current token price ratio. It safeguards the consistency of the value of each LP token, preserving the integrity of the pool by preventing disproportionate minting of LP tokens and avoiding the shift of the pool's price. This is essential for the trustless and automated nature of AMMs like Uniswap V2.
